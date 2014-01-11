@@ -93,7 +93,7 @@ App::missing(function($exception)
 //         case '403':
 //             return Response::view('errors.403', array(), 403);
 //             break;
-        
+
 //         default:
 //             return Response::view('errors.500', array(), 500);
 //             break;
@@ -111,3 +111,8 @@ Route::get('~sites', array('uses'=>'PageController@sites'));
 Route::get('about', array('uses'=>'PageController@about'));
 
 Route::get('wiki', array('uses'=>'PageController@wiki'));
+
+Route::get('test', function()
+{
+    var_dump(App::environment());
+});

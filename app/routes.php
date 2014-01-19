@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', array('as'=>'home', 'uses'=>'TopicController@index'));
+//Route::get('/', array('as'=>'home', 'uses'=>'TopicController@index'));
 
 Route::get('signup', array('uses'=>'UserController@create'));
 
@@ -112,7 +112,20 @@ Route::get('about', array('uses'=>'PageController@about'));
 
 Route::get('wiki', array('uses'=>'PageController@wiki'));
 
-Route::get('test', function()
+Route::get('app', function()
 {
     var_dump(App::environment());
+});
+
+Route::group(array('domain'=>'ghost.nhn.io'), function()
+{
+    Route::get('/', function()
+    {
+        return View::make('ghost.index');
+    });
+});
+
+Route::get('/', function()
+{
+    echo "home";
 });

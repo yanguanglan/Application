@@ -1,12 +1,7 @@
-/bootstrap/compiled.php
-/app/config/database.php
-/app/config/mail.php
-/app/config/app.yml
-/app/database/*.sqlite
+bootstrap/compiled.php
+app/database/*.sqlite
 composer.phar
 composer.lock
 Gemfile.lock
-.DS_Store
-dump.rdb
-/vendor
-/assets
+vendor
+assets

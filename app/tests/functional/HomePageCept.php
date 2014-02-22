@@ -1,3 +1,5 @@
 <?php
 $I = new TestGuy($scenario);
-$I->wantTo('perform actions and see result');
+$I->wantTo('see my home page');
+$I->amOnPage('test');
+$I->see('...', 'p');

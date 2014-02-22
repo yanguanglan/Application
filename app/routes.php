@@ -82,10 +82,10 @@ Route::post('user/unfollow', array('uses'=>'RelationshipController@toggle'));
 
 Route::get('user/relationship/{username}', array('uses'=>'RelationshipController@relationship'));
 
-App::missing(function($exception)
-{
-    return Response::view('errors.404', array(), 404);
-});
+// App::missing(function($exception)
+// {
+//     return Response::view('errors.404', array(), 404);
+// });
 
 // App::error(function($exception, $code)
 // {
@@ -119,13 +119,10 @@ Route::get('app', function()
 
 Route::group(array('domain'=>'ghost.nhn.io'), function()
 {
-    Route::get('/', function()
-    {
-        return View::make('ghost.index');
-    });
+    Route::get('/', 'ghost\UserController@index');
 });
 
-Route::get('/', function()
+Route::group(array('prefix'=>'api/v1'), function()
 {
-    echo "home";
+
 });
